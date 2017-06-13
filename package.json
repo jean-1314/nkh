@@ -4,6 +4,8 @@
   "description": "A test page",
   "main": "index.js",
   "scripts": {
+    "build": "gulp build",
+    "start": "npm run build && gulp serve",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +17,28 @@
   "bugs": {
     "url": "https://github.com/jean-1314/nkh/issues"
   },
-  "homepage": "https://github.com/jean-1314/nkh#readme"
+  "homepage": "https://github.com/jean-1314/nkh#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-cli": "^1.3.0",
+    "pug": "^2.0.0-rc.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.1.1",
+    "browser-sync": "^2.18.12",
+    "css-mqpacker": "^6.0.1",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-cli": "^1.3.0",
+    "gulp-csso": "^3.0.0",
+    "gulp-imagemin": "^3.3.0",
+    "gulp-minify": "^1.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^7.0.0",
+    "gulp-pug": "^3.3.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "pug": "^2.0.0-rc.2",
+    "run-sequence": "^1.2.2"
+  }
 }
