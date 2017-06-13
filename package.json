@@ -1,0 +1,19 @@
+{
+  "name": "nkh",
+  "version": "1.0.0",
+  "description": "A test page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jean-1314/nkh.git"
+  },
+  "author": "Ivan Savitsky",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jean-1314/nkh/issues"
+  },
+  "homepage": "https://github.com/jean-1314/nkh#readme"
+}
