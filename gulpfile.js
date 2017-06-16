@@ -8,6 +8,7 @@ var postcss = require("gulp-postcss");
 var plumber = require('gulp-plumber');
 var browserSync = require('browser-sync');
 var minify = require("gulp-csso");
+var concat = require("gulp-concat");
 
 let postplugins = [
 		autoprefixer({
@@ -22,6 +23,12 @@ let postplugins = [
 			.pipe(gulp.dest("./build/css/"))
 			.pipe(browserSync.reload({stream: true}));
 	});
+
+  gulp.task("scripts", function() {
+  return gulp.src(["source/**/*.js"])
+    .pipe(concat("script.js"))
+    .pipe(gulp.dest("./build/js"));
+});
 
   gulp.task("pages", function() {
 		return gulp.src("./source/pages/*.pug")
@@ -44,6 +51,22 @@ let postplugins = [
 
 		gulp.watch(["./source/sass/style.scss", "./source/**/*.scss"], ["styles"]);
 		gulp.watch("./source/**/*.pug", ["pages"]);
+    gulp.watch("./source/**/*.js", ["scripts"]);
 	});
+
+  gulp.task("copy", function() {
+  return gulp.src([
+    "source/fonts/**",
+    "source/img/**",
+    "source/*.html"
+  ], {
+    base: "source/"
+  })
+  .pipe(gulp.dest("build"));
+});
+
+gulp.task("clean", function() {
+  return del("build");
+});
 
 	gulp.task("build", ["pages","styles", "watch"]);
