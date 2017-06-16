@@ -1,9 +1,21 @@
 extends layout/content.pug
 
-include ../blocks/header/page-header.pug
-  include ../blocks/footer/main-nav.pug
-  include ../blocks/inner/full-nav.pug
-include ../blocks/inner/aside-panel.pug
-include ../blocks/inner/page-description.pug
-include ../blocks/inner/main.pug
-include ../blocks/inner/page-footer.pug
+include ../blocks/page-header/page-header.pug
+include ../blocks/aside-panel/aside-panel.pug
+include ../blocks/page-description/page-description.pug
+include ../blocks/main/main.pug
+include ../blocks/page-footer/page-footer.pug
+
+block title
+  title NKH
+
+block pagecontent
+  +page-header()
+
+  +aside-panel()
+
+  +page-description()
+
+  +main()
+
+  +page-footer()
