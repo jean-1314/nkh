@@ -1,0 +1,79 @@
+@keyframes block-pop {
+  0% {
+    height: 0%;
+  }
+
+  100% {
+    height: 147px;
+  }
+}
+
+@keyframes block-pop-hidden {
+  0% {
+    height: 147px;
+  }
+
+  100% {
+    height: 0px;
+  }
+}
+
+.aside-panel {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+}
+
+.aside-panel__logo-img {
+  width: 100%;
+}
+
+.aside-panel__blocks {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 330px;
+}
+
+.aside-panel__block-1 {
+  width: 95px;
+  height: 84px;
+  border-top: 1px solid #cdebe9;
+  background-color: #37b1a8;
+  cursor: pointer;
+}
+
+.aside-panel__block-pop {
+  width: 95px;
+  height: 147px;
+  border-top: 1px solid #2d928a;
+  background-color: #2a8881;
+  animation-name: block-pop;
+  animation-duration: 300ms;
+
+  &--hidden {
+    height: 0px;
+    transition: height 500ms;
+    animation-name: block-pop-hidden;
+    animation-duration: 300ms;
+  }
+}
+
+.aside-panel__block-2 {
+  width: 95px;
+  height: 94px;
+  border-top: 1px solid #1f608f;
+  border-bottom: 1px solid #c6d4e4;
+  transform: translateY(-20px);
+  background-color: #1c5394;
+  transition: transform 300ms;
+
+  &--toggle {
+    margin-bottom: 0;
+    transform: translateY(0);
+  }
+}
