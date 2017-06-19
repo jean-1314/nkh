@@ -1,6 +1,70 @@
+@keyframes page-desc {
+  0% {
+    height: 0%;
+  }
+
+  100% {
+    height: 147px;
+  }
+}
+
 .page-description {
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 1;
   grid-row-end: 3;
+  position: relative;
+  z-index: 5;
+  width: 325px;
+  background-image: url("../img/top.jpg");
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position-x: 50%;
+}
+
+.page-description__wrapper {
+  margin-top: 100px;
+  padding-left: 24px;
+  color: $white;
+}
+
+// .page-description:hover .page-description__wrapper {
+//   margin-top: 90px;
+//   transition: margin-top 300ms;
+//   animation-name: page-desc;
+//   animation-duration: 300ms;
+// }
+
+.page-description__header {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.page-description__caption {
+  display: block;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 1.2;
+}
+
+.page-description__subscribe {
+  position: relative;
+  display: block;
+  padding-top: 20px;
+  font-size: 11px;
+  font-weight: bold;
+  color: $white;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 100px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: #759aab;
+    opacity: 0.8;
+  }
 }
