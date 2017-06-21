@@ -9,3 +9,7 @@
 .page-header--hidden .full-nav {
   display: none;
 }
+
+.page-header--shown .full-nav {
+  display: block;
+}

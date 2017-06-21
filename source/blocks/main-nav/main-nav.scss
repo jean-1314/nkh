@@ -1,11 +1,94 @@
 .main-nav {
   position: relative;
   z-index: 7;
+  display: flex;
+}
+
+.main-nav--opened {
+  display: block;
+  z-index: 10;
 }
 
 .main-nav__toggle {
+  position: absolute;
+  display: block;
   padding: 0;
   border: none;
   background-color: transparent;
   font-size: 0;
+  cursor: pointer;
+}
+
+.main-nav--opened .main-nav__toggle {
+  display: block;
+  z-index: 10;
+  padding: 20px 0 0 68px;
+  font-size: 14px;
+  color: $white;
+  outline: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 26px;
+    left: 24px;
+    width: 23px;
+    height: 2px;
+    background-color: $white;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 21px;
+    left: 25px;
+    width: 11px;
+    height: 11px;
+    border-right: 1px solid $white;
+    border-top: 1px solid $white;
+    transform: rotate(-135deg);
+  }
+}
+
+.main-nav--closed .main-nav__toggle {
+  top: 19px;
+  left: 25px;
+  width: 23px;
+  height: 21px;
+  background-color: transparent;
+  outline: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 23px;
+    height: 2px;
+    background-color: $white;
+    box-shadow: 0 7px 0 0 $white,
+                0 14px 0 0 $white;
+  }
+}
+
+.main-nav__list {
+  display: flex;
+  margin: 0;
+  padding: 15px 0 0 65px;
+  list-style: none;
+}
+
+.main-nav--opened .main-nav__list {
+  display: none;
+}
+
+.main-nav__item {
+  margin-right: 12px;
+}
+
+.main-nav__link {
+  color: $white;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: bold;
 }
