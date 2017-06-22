@@ -1,6 +1,145 @@
 .main {
+  position: relative;
   grid-column-start: 3;
   grid-column-end: 4;
   grid-row-start: 1;
   grid-row-end: 2;
+  padding: 13px 0 0 14px;
+  background-color: $white;
+}
+
+.main__block-wrap {
+  position: absolute;
+  width: 635px;
+  height: 635px;
+  font-size: 0;
+  background-color: $white;
+}
+
+.main__block-1 {
+  display: inline-block;
+  width: 311px;
+  height: 311px;
+  margin-right: 13px;
+  background-color: #ececec;
+  background-image: url("../img/plane.jpg");
+  background-repeat: no-repeat;
+  background-size: 105% auto;
+  background-position: top;
+  transition: background-size 300ms ease;
+  cursor: pointer;
+
+  &:hover {
+    background-size: 100% auto;
+    transition: background-size 300ms ease;
+  }
+}
+
+.main__block-2 {
+  display: inline-block;
+  width: 311px;
+  height: 311px;
+  background-color: #5f83ad;
+}
+
+.main__block-3 {
+  width: 635px;
+  height: 311px;
+  box-sizing: border-box;
+  padding-top: 11px;
+  padding-left: 10px;
+  background-color: #e5e2dc;
+}
+
+.main__block-3-sub1 {
+  width: 300px;
+  height: 38px;
+  background-color: $white;
+}
+
+.main__block-3-sub2 {
+  width: 300px;
+  height: 108px;
+  margin-top: 2px;
+  background-color: $white;
+}
+
+.main__block-wrap--first {
+  z-index: 5;
+}
+
+.main__block-wrap--second {
+  z-index: 1;
+}
+
+.main__block-wrap--second {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.main__block-4,
+.main__block-5,
+.main__block-6,
+.main__block-7 {
+  width: 311px;
+  height: 311px;
+}
+
+.main__block-4 {
+  background-color: #f3c22c;
+  margin: 0 10px 12px 0;
+}
+
+.main__block-5 {
+  background-color: #fdf2d1;
+  margin-bottom: 12px;
+}
+
+.main__block-6 {
+  background-color: #f4f7e5;
+  margin-right: 10px;
+}
+
+.main__block-7 {
+  background-color: #666841;
+}
+
+.main__btn {
+  content: "";
+  position: absolute;
+  top: 303px;
+  right: 21px;
+  width: 61px;
+  height: 61px;
+  border-radius: 50%;
+  background-color: #ececec;
+}
+
+.main__btn-arrow {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  width: 24px;
+  height: 23px;
+  fill: #336699;
+}
+
+@keyframes block1 {
+  0% {
+    transform: translateX(0%)
+  }
+
+  100% {
+    transform: translateX(-300%);
+  }
+}
+
+@keyframes block2 {
+  0% {
+    transform: translateX(300%)
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
 }
