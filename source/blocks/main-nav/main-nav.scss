@@ -20,7 +20,6 @@
 }
 
 .main-nav--opened .main-nav__toggle {
-  display: block;
   z-index: 10;
   padding: 20px 0 0 68px;
   font-size: 14px;
@@ -51,6 +50,7 @@
 }
 
 .main-nav--closed .main-nav__toggle {
+  z-index: 10;
   top: 19px;
   left: 25px;
   width: 23px;
