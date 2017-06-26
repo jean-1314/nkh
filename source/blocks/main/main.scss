@@ -4,6 +4,12 @@
   grid-column-end: 4;
   grid-row-start: 1;
   grid-row-end: 2;
+    -ms-grid-column: 3;
+    -ms-grid-row: 1;
+    -ms-grid-column-span: 1;
+    -ms-grid-row-span: 1;
+  display: flex;
+  flex-wrap: wrap;
   padding: 13px 0 0 14px;
   background-color: $white;
 }
@@ -39,6 +45,7 @@
   display: inline-block;
   width: 311px;
   height: 311px;
+  margin-bottom: 12px;
   background-color: #5f83ad;
 }
 
@@ -64,30 +71,18 @@
   background-color: $white;
 }
 
-.main__block-wrap--first {
-  z-index: 5;
-}
-
-.main__block-wrap--second {
-  z-index: 1;
-}
-
-.main__block-wrap--second {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .main__block-4,
 .main__block-5,
 .main__block-6,
 .main__block-7 {
   width: 311px;
   height: 311px;
+  transform: translate(750px, -204%);
 }
 
 .main__block-4 {
   background-color: #f3c22c;
-  margin: 0 10px 12px 0;
+  margin: 0 12px 12px 0;
 }
 
 .main__block-5 {
@@ -97,11 +92,12 @@
 
 .main__block-6 {
   background-color: #f4f7e5;
-  margin-right: 10px;
+  margin-right: 12px;
 }
 
 .main__block-7 {
   background-color: #666841;
+  margin-bottom: 12px;
 }
 
 .main__btn {
@@ -113,6 +109,7 @@
   height: 61px;
   border-radius: 50%;
   background-color: #ececec;
+  z-index: 10;
 }
 
 .main__btn-arrow {
@@ -124,22 +121,130 @@
   fill: #336699;
 }
 
-@keyframes block1 {
+/*first group of blocks*/
+
+.main--first .main__block-1 {
+  transform: translate(0, 0);
+  animation-name: secondSlideOut;
+  animation-duration: 500ms;
+}
+
+.main--first .main__block-2 {
+  transform: translate(0, 0);
+  animation-name: secondSlideOut;
+  animation-duration: 900ms;
+}
+
+.main--first .main__block-3 {
+  transform: translate(0, -0);
+  animation-name: secondSlideOut;
+  animation-duration: 700ms;
+}
+
+.main--first .main__block-4 {
+  transform: translate(750px, -204%);
+  animation-name: secondSlideIn;
+  animation-duration: 800ms;
+}
+
+.main--first .main__block-5 {
+  transform: translate(750px, -204%);
+  animation-name: secondSlideIn;
+  animation-duration: 900ms;
+}
+
+.main--first .main__block-6 {
+  transform: translate(750px, -204%);
+  animation-name: secondSlideIn;
+  animation-duration: 500ms;
+}
+
+.main--first .main__block-7 {
+  transform: translate(750px, -204%);
+  animation-name: secondSlideIn;
+  animation-duration: 1s;
+}
+
+/*second group of blocks*/
+
+.main--second .main__block-1 {
+  transform: translate(-300%, 0);
+  animation-name: firstSlideIn;
+  animation-duration: 800ms;
+}
+
+.main--second .main__block-2 {
+  transform: translate(-300%, 0);
+  animation-name: firstSlideIn;
+  animation-duration: 900ms;
+}
+
+.main--second .main__block-3 {
+  transform: translate(-150%, 0);
+  animation-name: firstSlideIn;
+  animation-duration: 700ms;
+}
+
+.main--second .main__block-4 {
+  transform: translate(0, -204%);
+  animation-name: firstSlideOut;
+  animation-duration: 700ms;
+}
+
+.main--second .main__block-5 {
+  transform: translate(0, -204%);
+  animation-name: firstSlideOut;
+  animation-duration: 900ms;
+}
+
+.main--second .main__block-6 {
+  transform: translate(0, -204%);
+  animation-name: firstSlideOut;
+  animation-duration: 500ms;
+}
+
+.main--second .main__block-7 {
+  transform: translate(0, -204%);
+  animation-name: firstSlideOut;
+  animation-duration: 1s;
+}
+
+@keyframes firstSlideIn {
   0% {
-    transform: translateX(0%)
+    transform: translate(0, 0);
   }
 
   100% {
-    transform: translateX(-300%);
+    transform: translate(-300%, 0);
   }
 }
 
-@keyframes block2 {
+@keyframes firstSlideOut {
   0% {
-    transform: translateX(300%)
+    transform: translate(750px, -204%);
   }
 
   100% {
-    transform: translateX(0%);
+    transform: translate(0, -204%);
+  }
+}
+
+@keyframes secondSlideIn {
+  0% {
+    transform: translate(0, -204%);
+  }
+
+  100% {
+    transform: translate(-300%, -204%);
+  }
+}
+
+@keyframes secondSlideOut {
+  0% {
+    transform: translate(750px, 0);
+  }
+
+  100% {
+    transform: translate(0, 0);
   }
 }
