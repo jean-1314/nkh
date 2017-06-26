@@ -12,7 +12,9 @@ var concat = require("gulp-concat");
 
 let postplugins = [
 		autoprefixer({
-			browsers: ["last 3 versions"]})
+			browsers: ["last 3 versions"],
+      grid: true
+      })
 		];
 
 	gulp.task("styles", function() {
